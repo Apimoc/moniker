@@ -1,0 +1,20 @@
+{{ define "main" }}
+  <div class="posts-container">
+    <h1>{{ .Title }}</h1>
+    {{ $pages := where .Site.RegularPages "Section" "posts" }}
+    {{ $perPage := .Site.Params.paginate }}
+    {{ $paginator := .Paginate $pages $perPage }}
+    {{ partial "post-list.html" $paginator.Pages }}
+    <div class="pagination">
+      {{ if $paginator.HasPrev }}
+        <a href="{{ $paginator.Prev.URL }}" class="pagination-prev">Previous</a>
+      {{ end }}
+      <span class="pagination-page-number">
+        Page {{ $paginator.PageNumber }} of {{ $paginator.TotalPages }}
+      </span>
+      {{ if $paginator.HasNext }}
+        <a href="{{ $paginator.Next.URL }}" class="pagination-next">Next</a>
+      {{ end }}
+    </div>
+  </div>
+{{ end }}

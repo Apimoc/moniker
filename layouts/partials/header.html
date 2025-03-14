@@ -1,0 +1,29 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ .Title }} | {{ .Site.Title }}</title>
+  <meta name="description" content="{{ with .Params.description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+  <link rel="stylesheet" href="{{ "css/style.css" | relURL }}" />
+  <link rel="stylesheet" href="{{ "css/fonts.css" | relURL }}" />
+  <script src="{{ "js/feather.min.js" | relURL }}"></script>
+  <script src="{{ "js/theme-toggle.js" | relURL }}" defer></script>
+</head>
+<nav>
+  <div class="menu-container">
+    <ul class="menu">
+      {{ range .Site.Menus.main }}
+        <li>
+          {{ if eq .Identifier "theme-toggle" }}
+            <a href="javascript:void(0);" id="theme-toggle" class="theme-toggle-link">
+              {{ .Pre }}{{ .Name }}
+            </a>
+          {{ else }}
+            <a href="{{ if eq .URL "" }}{{ "/" }}{{ else }}{{ .URL | relURL }}{{ end }}">
+              {{ .Pre }}{{ .Name }}
+            </a>
+          {{ end }}
+        </li>
+      {{ end }}
+    </ul>
+  </div>
+</nav>

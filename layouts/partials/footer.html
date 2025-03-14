@@ -1,0 +1,10 @@
+<footer>
+  {{ with .Site.Params.footer }}
+    {{ . | markdownify }}
+  {{ end }}
+  <p>&copy; {{ now.Year }} {{ .Site.Params.copyright_name }}</p>
+</footer>
+<script>
+  feather.replace();
+</script>
+</html>

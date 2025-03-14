@@ -1,0 +1,378 @@
+/* Base Styles */
+html, body {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  line-height: 1.5;
+  font-family: 'Lato', sans-serif;
+  background-color: #f7f7f7;
+  transition: background-color 0.3s, color 0.3s;
+  color: #333;
+}
+
+body.dark {
+  background-color: #181818;
+  color: #fff;
+}
+
+/* Links */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Navigation */
+nav {
+  text-align: center;
+}
+
+nav ul.menu {
+  padding: 0;
+  text-align: center;
+  list-style-type: none;
+  display: inline-flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+nav ul.menu li {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.5em;
+  transition: color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+nav ul.menu li a {
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5em 1em;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+}
+
+nav ul.menu li:hover {
+  color: #B57614;
+  transform: scale(1.1);
+  box-shadow: 0px 0px 10px rgba(181, 118, 20, 0.5);
+  outline: 2px solid #B57614;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  nav ul.menu li {
+    margin: 0.3em;
+  }
+  nav ul.menu li a {
+    font-size: 0.8em;
+    padding: 0.4em 0.8em;
+  }
+}
+
+/* Posts Container */
+.posts-container {
+  text-align: left;
+  margin-top: 1em;
+  font-size: 1rem;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 2em;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 90%;
+  margin: 2em auto;
+  box-sizing: border-box;
+}
+
+body.dark .posts-container {
+  background-color: #252525;
+}
+
+/* Post Content */
+.post-content {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 1em;
+  box-sizing: border-box;
+}
+
+/* Recent Posts */
+.recent-posts {
+  margin-top: 3em;
+  text-align: center;
+}
+
+.recent-posts ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.recent-posts li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+.recent-posts li a {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5em;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+  color: inherit;
+  width: 50%;
+  max-width: 50vw;
+  margin: 0 auto;
+}
+
+.recent-posts li a:hover {
+  background-color: #B57614;
+  color: white;
+  transform: translateY(-5px);
+  box-shadow: 0px 5px 15px rgba(181, 118, 20, 0.5);
+}
+
+/* Post Titles & Dates */
+.post-title {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 0.5em;
+}
+
+.post-date {
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+body.dark .post-date {
+  color: #ccc;
+}
+
+body.dark .recent-posts li a {
+  background-color: #333;
+  color: white;
+}
+
+body.dark .recent-posts li a:hover {
+  background-color: #B57614;
+}
+
+/* Bio & Home Image */
+.home-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+  text-align: center;
+}
+
+img.circular-image {
+  border-radius: 50%;
+  border: 5px solid #ddd;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+img.circular-image:hover {
+  transform: scale(1.05);
+}
+
+.bio-container {
+  text-align: center;
+  margin-top: 1em;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 2em;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 70%;
+  margin: 2em auto;
+}
+
+body.dark .bio-container {
+  background-color: #252525;
+}
+
+/* Social Links */
+.social-links-container {
+  display: flex;
+  justify-content: center;
+  gap: 1.5em;
+  margin-top: 2em;
+}
+
+.social-link {
+  display: inline-block;
+  padding: 0.5em;
+  color: inherit;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.social-link:hover {
+  color: #B57614;
+  transform: scale(1.1);
+}
+
+.social-icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* Post Meta */
+.post-meta a {
+  text-decoration: none;
+  color: #B57614;
+  transition: color 0.3s, text-shadow 0.3s, text-decoration 0.3s;
+}
+
+.post-meta a:hover {
+  color: #B57614;
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  margin-top: 2em;
+  color: inherit;
+  text-align: center;
+  padding-top: 1em;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: #B57614;
+  text-decoration: none;
+  transition: color 0.3s, text-decoration 0.3s;
+  font-size: 0.9rem;
+}
+
+footer a:hover {
+  color: #B57614;
+  text-decoration: underline;
+}
+
+/* Grid Layout */
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2em;
+  justify-content: center;
+  padding: 2em 0;
+}
+
+/* Post Items */
+.post-item {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 1em;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.post-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.post-thumbnail {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1em;
+}
+
+body.dark .post-item {
+  background-color: #333;
+  color: white;
+}
+
+body.dark .post-thumbnail {
+  filter: brightness(0.7);
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 3em;
+  align-items: center;
+}
+
+.pagination-page-number {
+  font-weight: bold;
+  font-size: 1.2em;
+  margin: 0 1em;
+  color: inherit;
+}
+
+.pagination-link,
+.pagination-prev,
+.pagination-next {
+  padding: 0.5em 1em;
+  margin: 0 0.5em;
+  background-color: transparent;
+  color: inherit;
+  text-decoration: none;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination-link:hover,
+.pagination-prev:hover,
+.pagination-next:hover {
+  background-color: transparent;
+  color: #B57614;
+  border-color: #B57614;
+}
+
+/* Cursor Animation */
+.cursor {
+  display: inline-block;
+  width: 1ch;
+  background-color: #B57614;
+  animation: blink 0.8s linear infinite;
+  height: 1em;
+  vertical-align: text-bottom;
+  position: relative;
+}
+
+@keyframes blink {
+  0%, 49% {
+    opacity: 1;
+  }
+  50%, 100% {
+    opacity: 0;
+  }
+}
+
+/* Code Blocks */
+pre, code {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}

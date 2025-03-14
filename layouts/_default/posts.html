@@ -1,0 +1,18 @@
+{{ define "main" }}
+<div class="posts-container">
+  <h1>{{ .Title }} {{ partial "cursor.html" }}</cursor></h1>
+  {{ if .Params.thumbnail }}
+    <img src="{{ .Params.thumbnail | relURL }}" alt="{{ .Title }}" class="post-thumbnail" />
+  {{ end }}
+  <p>{{ .Content }}</p>
+  <p class="post-meta">
+    Published on {{ .Date.Format "January 2, 2006" }} 
+    {{ if .Params.tags }} and tagged 
+    {{ range $index, $tag := .Params.tags }}
+      {{ if $index }}, {{ end }}
+      <a href="{{ "tags/" | relURL }}{{ $tag | urlize }}" class="meta-tag">{{ $tag }}</a>
+    {{ end }}
+    {{ end }}.
+  </p>
+</div>
+{{ end }}

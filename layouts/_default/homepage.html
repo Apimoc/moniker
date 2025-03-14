@@ -1,0 +1,30 @@
+{{ define "main" }}
+  <div class="home-image-container">
+    <img class="circular-image" src="{{ .Site.Params.profile_image }}" alt="{{ .Site.Params.profile_image_alt }}">
+  </div>
+  <div class="bio-container">
+    <p>{{ .Content }}</p>
+  </div>
+  <div class="social-links-container">
+    <a href="{{ .Site.Params.github }}" target="_blank" class="social-link" aria-label="GitHub">
+      <i data-feather="github" class="social-icon"></i>
+    </a>
+    <a href="{{ .Site.Params.linkedin }}" target="_blank" class="social-link" aria-label="LinkedIn">
+      <i data-feather="linkedin" class="social-icon"></i>
+    </a>
+  </div>
+  <div class="recent-posts">
+    <h2>Recent Posts</h2>
+    <ul>
+      {{ $recentPosts := first 4 (where .Site.RegularPages "Section" "posts") }}
+      {{ range $recentPosts }}
+        <li>
+          <a href="{{ .RelPermalink }}" class="recent-post-link">
+            <span class="post-title">{{ .Title | markdownify }}</span>
+            <span class="post-date">{{ .Date.Format .Site.Params.DateFormat }}</span>
+          </a>
+        </li>
+      {{ end }}
+    </ul>
+  </div>
+{{ end }}
