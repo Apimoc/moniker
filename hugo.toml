@@ -1,0 +1,53 @@
+baseurl = "http://localhost:1313/"
+languageCode = "en-us"
+title = "Moniker"
+theme = "moniker"
+
+[params]
+  description = "A sleek and minimalist professional portfolio theme for Hugo"
+  copyright_name = "Moniker"
+  footer = "Made with [Hugo](https://gohugo.io/) using [Moniker](https://github.com/apimoc/moniker)"
+  profile_image = "/images/profile.webp"
+  profile_image_alt = "Moniker"
+  DateFormat = "January 2, 2006"
+  github = "https://github.com/"
+  linkedin = "https://linkedin.com/in/"
+  paginate = 6
+  paginatePath = "page"
+
+[permalinks]
+  posts = "/posts/:slug/" 
+
+[[menu.main]]
+  name = " "
+  pre = "<span data-feather='home'></span>"
+  url = "/"
+  weight = 1
+
+[[menu.main]]
+  name = "CV"
+  pre = "<span data-feather='file-text'></span>"
+  url = "/cv/"
+  weight = 2
+
+[[menu.main]]
+  name = "Blog"
+  pre = "<span data-feather='book'></span>"
+  url = "/posts/"
+  weight = 3
+
+[[menu.main]]
+  name = "Projects"
+  pre = "<span data-feather='code'></span>"
+   url = "/projects/"
+  weight = 4
+
+[[menu.main]]
+  name = ""
+  pre = "<span id='theme-icon' class='feather-icon'></span>"
+  url = "javascript:void(0)" 
+  weight = 5
+  identifier = "theme-toggle"
+
+[taxonomies]
+  tag = "tags"
