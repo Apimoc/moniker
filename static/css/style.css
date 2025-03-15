@@ -1,5 +1,5 @@
 /* Base Styles */
-html, body {
+body {
   width: 100%;
   min-height: 100vh;
   margin: 0;
@@ -93,6 +93,14 @@ nav ul.menu li:hover {
   max-width: 90%;
   margin: 2em auto;
   box-sizing: border-box;
+}
+
+.posts-container img {
+  max-width: 100%;
+  height: auto;      
+  display: block;       
+  margin: 0 auto;       
+  border-radius: 8px;   
 }
 
 body.dark .posts-container {
