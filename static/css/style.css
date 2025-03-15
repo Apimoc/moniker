@@ -103,6 +103,15 @@ nav ul.menu li:hover {
   border-radius: 8px;   
 }
 
+.posts-container p a {
+  color: #B57614;
+}
+
+.posts-container p a:hover {
+  text-decoration: underline;
+  color: #B57614;
+}
+
 body.dark .posts-container {
   background-color: #252525;
 }
